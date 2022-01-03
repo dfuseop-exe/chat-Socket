@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express();
 const chats = require('./data/data')
+const dotenv = require('dotenv');
+const PORT = process.env.PORT || 5000;
+dotenv.config();
 
 app.get('/', (req, res) => {
     res.send("Api is Working");
@@ -17,4 +20,4 @@ app.get('/api/chat/:id', (req, res) => {
 
 
 
-app.listen(5000,()=>console.log("listening on port"));
+app.listen(PORT,()=>console.log("listening on port"));
